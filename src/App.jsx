@@ -17,11 +17,6 @@ import AdminProduct from './componants/ADMIN/allproduct';
 import Leaderboard from './componants/USER/Leaderboard';
 
 
-
-
-
-import './app.css';
-
 function LayoutWrapper({ children }) {
   const location = useLocation();
   const isLoggedIn = !!localStorage.getItem('token');
