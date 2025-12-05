@@ -12,7 +12,7 @@ export default function HomePage() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/auth/allproducts');
+        const res = await axios.get('/allproducts');
         setAuctionItems(res.data);
         setLoading(false);
       } catch (err) {
