@@ -8,7 +8,7 @@ const AdminAllProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/auth/users");
+      const response = await axios.get("/users");
       setProducts(response.data);
       setLoading(false);
     } catch (error) {

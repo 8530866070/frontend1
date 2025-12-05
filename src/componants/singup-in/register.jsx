@@ -16,7 +16,7 @@ const RegisterPage = () => {
     e.preventDefault();
     setError('');
     try {
-      const res = await axios.post('/auth/register', formData);
+      const res = await axios.post('/register', formData);
       alert(res.data.message);
       navigate('/');
     } catch (err) {

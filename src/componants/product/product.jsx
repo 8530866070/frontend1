@@ -26,7 +26,7 @@ const ProductForm = () => {
     setMessage('');
 
     try {
-      const res = await axios.post('/auth/product', {
+      const res = await axios.post('/product', {
             name: formData.name,
             description: formData.description,
             image: formData.image,
