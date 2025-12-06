@@ -8,16 +8,16 @@ const Leaderboard = () => {
   const [product, setProduct] = useState({});
   const [bids, setBids] = useState([]);
   const [newBid, setNewBid] = useState('');
-  const userId = localStorage.getItem("userId");  // logged user id stored at login
+  const userId = localStorage.getItem("userId");  
 
-  // Fetch product and bids
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const prod = await axios.get('/productbyid/${productId}');
+        const prod = await axios.get(`/productbyid/${productId}`);
         setProduct(prod.data);
 
-        const bidRes = await axios.get('/bids/${productId}');
+        const bidRes = await axios.get(`/bids/${productId}`);
         setBids(bidRes.data);
       } catch (err) {
         console.error('Error loading leaderboard data:', err);
@@ -37,7 +37,7 @@ const Leaderboard = () => {
         bidAmount: Number(newBid),
       });
 
-      const bidRes = await axios.get('/bids/${productId}'); 
+      const bidRes = await axios.get(`/bids/${productId}`); 
       setBids(bidRes.data);
       setNewBid('');
     } catch (err) {
