@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from "axios";
+import axios from "../../api/axios";
 import {
   Container,
   Row,
@@ -24,7 +24,7 @@ const AuctionDetailPage = () => {
 
   const fetchAuctionDetails = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/auth/product/${id}`);
+      const response = await axios.get('/product/${id}');
       setAuction(response.data);
     } catch (error) {
       console.error("Error fetching product:", error);
@@ -33,7 +33,7 @@ const AuctionDetailPage = () => {
 
   const fetchBids = async () => {
     try {
-      const res = await axios.get(`http://localhost:5000/api/auth/bids/${id}`);
+      const res = await axios.get(`/bids/${id}`);
       setBids(res.data);
     } catch (err) {
       console.error("Error fetching bids:", err);
@@ -75,7 +75,7 @@ const AuctionDetailPage = () => {
     }
 
     try {
-      await axios.post(`http://localhost:5000/api/auth/placebid/${id}`, {
+      await axios.post('/placebid/${id}', {
         userId,
         bidAmount: parseFloat(bidAmount)
       });

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../api/axios";
 import { Table, Container, Button, Spinner } from "react-bootstrap";
 
 const AdminAllProducts = () => {
