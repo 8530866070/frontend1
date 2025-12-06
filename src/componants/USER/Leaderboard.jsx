@@ -61,7 +61,7 @@ const Leaderboard = () => {
           <Col md={7}>
             <h2>{product.name}</h2>
             <p><strong>Description:</strong> {product.description}</p>
-            <p><strong>Category:</strong> {product.category}</p>
+            <p><strong>End:</strong> {product.auctionEndDate}</p>
             <p><strong>Starting Bid:</strong> ₹{product.baseBid}</p>
             <h5 className="mt-3">💰 Highest Bid: ₹{bids[0]?.amount || "No bids yet"}</h5>
           </Col>
