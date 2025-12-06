@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Container, Row, Col, Button, Card, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
+import axios from "../../api/axios";
 import './home.css';
 
 export default function HomePage() {
   const [auctionItems, setAuctionItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch products from API
+ 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
