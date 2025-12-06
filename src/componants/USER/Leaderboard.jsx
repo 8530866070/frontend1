@@ -8,7 +8,7 @@ const Leaderboard = () => {
   const [product, setProduct] = useState({});
   const [bids, setBids] = useState([]);
   const [newBid, setNewBid] = useState('');
-  const userId = localStorage.getItem("userId");  
+   const userId = "6931d94bb5900d6832d0183f"; //localStorage.getItem("userId");  
 
 
   useEffect(() => {
