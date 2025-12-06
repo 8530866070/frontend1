@@ -14,10 +14,10 @@ const Leaderboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const prodRes = await axios.get(`/product/${productId}`);
-        setProduct(prodRes.data);
+        const prod = await axios.get('/productbyid/${productId}');
+        setProduct(prod.data);
 
-        const bidRes = await axios.get(`/bids/${productId}`);
+        const bidRes = await axios.get('/bids/${productId}');
         setBids(bidRes.data);
       } catch (err) {
         console.error('Error loading leaderboard data:', err);
@@ -31,12 +31,13 @@ const Leaderboard = () => {
     if (!newBid) return;
 
     try {
-      await axios.post(`/bid/${productId}`, {
+      await axios.post('/bid', {
+        productId,
         userId,
         bidAmount: Number(newBid),
       });
 
-      const bidRes = await axios.get(`/bids/${productId}`);
+      const bidRes = await axios.get('/bids/${productId}'); 
       setBids(bidRes.data);
       setNewBid('');
     } catch (err) {
