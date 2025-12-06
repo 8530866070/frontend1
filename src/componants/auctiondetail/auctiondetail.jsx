@@ -19,13 +19,13 @@ const AuctionDetailPage = () => {
   const [bidAmount, setBidAmount] = useState("");
   const [timeLeft, setTimeLeft] = useState("");
 
-  // Dummy userId — replace with actual logged-in user later
-  const userId = "664a3a55df947ceff0ac442b";
+  // Dummy userId — replace with actual login user data later
+  const userId = "35665588522255899";
 
   const fetchAuctionDetails = async () => {
     try {
-      const response = await axios.get('/product/${id}');
-      setAuction(response.data);
+      const res = await axios.get(`/product/${id}`);
+      setAuction(res.data);
     } catch (error) {
       console.error("Error fetching product:", error);
     }
@@ -65,6 +65,7 @@ const AuctionDetailPage = () => {
       }, 1000);
     }
     return () => clearInterval(interval);
+
   }, [auction]);
 
   const handleBid = async () => {
@@ -75,7 +76,7 @@ const AuctionDetailPage = () => {
     }
 
     try {
-      await axios.post('/placebid/${id}', {
+      await axios.post(`/bid/${id}`, {
         userId,
         bidAmount: parseFloat(bidAmount)
       });
@@ -104,7 +105,7 @@ const AuctionDetailPage = () => {
           <Card>
             <Card.Img
               variant="top"
-              src={auction.image || "https://via.placeholder.com/400x300?text=No+Image"}
+              src={auction.image}
               style={{ width: "100%", height: "300px", objectFit: "contain" }}
             />
             <Card.Body>
@@ -141,7 +142,7 @@ const AuctionDetailPage = () => {
             {bids.length > 0 ? (
               bids.map((bid, index) => (
                 <ListGroup.Item key={index}>
-                  {bid.userId?.username || "User"} - ₹{bid.bidAmount} at {new Date(bid.bidTime).toLocaleTimeString()}
+                  {bid.userId?.username || "User"} - ₹{bid.amount || bid.bidAmount} at {new Date(bid.bidTime).toLocaleTimeString()}
                 </ListGroup.Item>
               ))
             ) : (
