@@ -83,7 +83,7 @@ const Leaderboard = () => {
               </Form.Group>
             </Col>
           </Row>
-          <Button type="submit" className="mt-3" disabled={!userId}>
+          <Button type="submit" className="mt-3">   {/* disabled={!userId} */}
             Place Bid
           </Button>
         </Form>
