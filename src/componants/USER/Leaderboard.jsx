@@ -65,6 +65,7 @@ const Leaderboard = () => {
             <p><strong>Description:</strong> {product.description}</p>
             <p><strong>End:</strong>  {new Date(product.auctionEndDate).toLocaleString()}</p>
             <p><strong>Starting Bid:</strong> ₹{product.baseBid}</p>
+            <p><strong>userid :</strong> {userId}</p>
             <h5 className="mt-3" style={{color:"green"}}>💰 Highest Bid: ₹{bids[0]?.amount || "No bids yet"}</h5>
           </Col>
         </Row>
@@ -85,7 +86,7 @@ const Leaderboard = () => {
               </Form.Group>
             </Col>
           </Row>
-          <Button type="submit" className="mt-3">   {/* disabled={!userId} */}
+          <Button type="submit" className="mt-3" disabled={!userId}>   {/* disabled={!userId} */}
             Place Bid
           </Button>
         </Form>
