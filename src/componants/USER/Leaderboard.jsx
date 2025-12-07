@@ -94,7 +94,7 @@ const Leaderboard = () => {
           {bids.length > 0 ? (
             bids.map((bid, i) => (
               <ListGroup.Item key={i}>
-                ₹{bid.amount} — {new Date(bid.timestamp).toLocaleString()}
+              <h5>{bid.User.name}</h5>  ₹{bid.amount} — {new Date(bid.timestamp).toLocaleString()}
               </ListGroup.Item>
             ))
           ) : (
