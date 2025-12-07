@@ -97,7 +97,7 @@ const Leaderboard = () => {
           {bids.length > 0 ? (
             bids.map((bid, i) => (
               <ListGroup.Item key={i}>
-             <i style={{color:"purple"}}>{bid.user.name}</i> <p style={{alignItems:'center'}}>₹{bid.amount} — {new Date(bid.timestamp).toLocaleString()}</p>
+             <i style={{color:"purple"}}>{bid.user?.name}</i> <p style={{alignItems:'center'}}>₹{bid.amount} — {new Date(bid.timestamp).toLocaleString()}</p>
               </ListGroup.Item>
             ))
           ) : (
