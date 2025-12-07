@@ -55,7 +55,7 @@ export default function HomePage() {
                       <Card.Text>Base Bid: ₹{item.baseBid}</Card.Text>
                       <Card.Text>Current Bid: ₹{item.highestBid}</Card.Text>
                       <Card.Text>Ends on: {new Date(item.auctionEndDate).toLocaleDateString()}</Card.Text>
-                     <Link to={`/leaderboard/${item._id}`}>
+                     <Link to={`/user/leaderboard/${item._id}`}>
                         <Button variant="primary">Join Bid</Button>
                       </Link>
                     </Card.Body>
