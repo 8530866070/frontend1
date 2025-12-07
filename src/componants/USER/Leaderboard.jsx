@@ -8,8 +8,8 @@ const Leaderboard = () => {
   const [product, setProduct] = useState({});
   const [bids, setBids] = useState([]);
   const [newBid, setNewBid] = useState('');
-   const userId = JSON.parse(localStorage.getItem("userId")); //"6931d94bb5900d6832d0183f"; //localStorage.getItem("userId");  
-
+  const localuser = JSON.parse(localStorage.getItem("user")); //"6931d94bb5900d6832d0183f"; //localStorage.getItem("userId");  
+  const userId = localuser?.id;
 
   useEffect(() => {
     const fetchData = async () => {
