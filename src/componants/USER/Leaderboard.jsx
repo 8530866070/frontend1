@@ -8,7 +8,7 @@ const Leaderboard = () => {
   const [product, setProduct] = useState({});
   const [bids, setBids] = useState([]);
   const [newBid, setNewBid] = useState('');
-   const userId = "6931d94bb5900d6832d0183f"; //localStorage.getItem("userId");  
+   const userId = JSON.parse(localStorage.getItem("userId")); //"6931d94bb5900d6832d0183f"; //localStorage.getItem("userId");  
 
 
   useEffect(() => {
@@ -63,7 +63,7 @@ const Leaderboard = () => {
             <p><strong>Description:</strong> {product.description}</p>
             <p><strong>End:</strong>  {new Date(product.auctionEndDate).toLocaleString()}</p>
             <p><strong>Starting Bid:</strong> ₹{product.baseBid}</p>
-            <h5 className="mt-3">💰 Highest Bid: ₹{bids[0]?.amount || "No bids yet"}</h5>
+            <h5 className="mt-3" style={{color:"green"}}>💰 Highest Bid: ₹{bids[0]?.amount || "No bids yet"}</h5>
           </Col>
         </Row>
 
@@ -94,7 +94,7 @@ const Leaderboard = () => {
           {bids.length > 0 ? (
             bids.map((bid, i) => (
               <ListGroup.Item key={i}>
-              <h5>{bid.user.name}</h5>  ₹{bid.amount} — {new Date(bid.timestamp).toLocaleString()}
+             <i>{bid.user.name}</i> <p style={{alignItems:'center'}}>₹{bid.amount} — {new Date(bid.timestamp).toLocaleString()}</p>
               </ListGroup.Item>
             ))
           ) : (
