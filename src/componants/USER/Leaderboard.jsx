@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../../api/axios';
-import {jwt_decode} from "jwt-decode";
+
 import { useParams } from 'react-router-dom';
 import { Card, Form, Button, Container, ListGroup, Row, Col } from 'react-bootstrap';
 
@@ -9,13 +9,7 @@ const Leaderboard = () => {
   const [product, setProduct] = useState({});
   const [bids, setBids] = useState([]);
   const [newBid, setNewBid] = useState('');
-  const token = localStorage.getItem("token");
-  let userId = null;
 
-if (token) {
-  const decoded = jwt_decode(token);
-  userId = decoded.id; // or whatever field your token has
-}
 
   useEffect(() => {
     const fetchData = async () => {
