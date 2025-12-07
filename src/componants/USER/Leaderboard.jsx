@@ -27,24 +27,24 @@ const Leaderboard = () => {
   }, [productId]);
 
   const handleBidSubmit = async (e) => {
-    e.preventDefault();
-    if (!newBid) return;
+  e.preventDefault();
+  if (!newBid) return;
 
-    try {
-      await axios.post('/bid', {
-        productId,
-        userId,
-        bidAmount: Number(newBid),
-      });
+  try {
+    await axios.post('/bid', {
+      productId: productId,
+      user: userId,         
+      amount: Number(newBid) 
+    });
 
-      const bidRes = await axios.get(`/bids/${productId}`); 
-      setBids(bidRes.data);
-      setNewBid('');
-    } catch (err) {
-      console.error('Error placing bid:', err);
-      alert("Failed to place bid");
-    }
-  };
+    const bidRes = await axios.get(`/bids/${productId}`);
+    setBids(bidRes.data);
+    setNewBid('');
+  } catch (err) {
+    console.error('Error placing bid:', err);
+    alert("Failed to place bid");
+  }
+};
 
   return (
     <Container className="my-5">
