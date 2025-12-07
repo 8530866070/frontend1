@@ -21,7 +21,7 @@ export default function LoginPage() {
       password: user.password
     });
      localStorage.setItem('token', res.data.token);
-    localStorage.setItem("user", JSON.stringify(res.data.user));
+    localStorage.setItem("userdetail", JSON.stringify(res.data.user));
     alert('Login successful!');
     navigate('/user/home');
   } catch (err) {

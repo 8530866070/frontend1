@@ -9,7 +9,7 @@ const Leaderboard = () => {
   const [product, setProduct] = useState({});
   const [bids, setBids] = useState([]);
   const [newBid, setNewBid] = useState('');
-  const userinfo = JSON.parse(localStorage.getItem("user"));
+  const userinfo = JSON.parse(localStorage.getItem("userdetail"));
   const userId = userinfo?.id;
 
 
