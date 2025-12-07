@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from '../../api/axios';
-import jwt_decode from "jwt-decode";
+import {jwt_decode} from "jwt-decode";
 import { useParams } from 'react-router-dom';
 import { Card, Form, Button, Container, ListGroup, Row, Col } from 'react-bootstrap';
 
