@@ -21,7 +21,7 @@ function LayoutWrapper({ children }) {
   const location = useLocation();
   const isLoggedIn = !!localStorage.getItem('token');
 
-  // Show user layout only on logged-in pages
+
   const isUserPage = location.pathname.startsWith('/user');
     const isHomePage = location.pathname.startsWith('/user/home');
 
@@ -31,10 +31,6 @@ function LayoutWrapper({ children }) {
     <>
       {!isUserPage && <Navbar />}
       {isUserPage && <User_Navbar />}
-   
-      
-
-
       {children}
 
       {isHomePage && <Footer />}
