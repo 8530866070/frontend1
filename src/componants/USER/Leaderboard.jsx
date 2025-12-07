@@ -9,8 +9,8 @@ const Leaderboard = () => {
   const [product, setProduct] = useState({});
   const [bids, setBids] = useState([]);
   const [newBid, setNewBid] = useState('');
-  const user = JSON.parse(localStorage.getItem("user"));
-  const userId = user?.id;
+  const userinfo = JSON.parse(localStorage.getItem("user"));
+  const userId = userinfo?.id;
 
 
   useEffect(() => {
