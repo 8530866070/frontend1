@@ -20,8 +20,9 @@ export default function LoginPage() {
       email: user.email,
       password: user.password
     });
+     localStorage.setItem('token', res.data.token);
+    localStorage.setItem("user", JSON.stringify(res.data.user));
     alert('Login successful!');
-    localStorage.setItem('token', res.data.token);
     navigate('/user/home');
   } catch (err) {
     alert(err.response?.data?.message || 'Invalid credentials');
