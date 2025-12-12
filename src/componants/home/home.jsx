@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Row, Col, Button, Card, Spinner } from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Spinner,Carousel  } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import axios from "../../api/axios";
 import './home.css';
@@ -28,7 +28,39 @@ export default function HomePage() {
     <>
     <div id='boddy'>
       <br />
-      <div className="text-white py-5 text-center">
+  <div style={{ width: "100%", height: "400px", overflow: "hidden" }}>
+      <Carousel indicators={false} controls={true} interval={2000}>
+        
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://t3.ftcdn.net/jpg/02/53/28/62/360_F_253286257_1U5yEsbukrIQcZ3eR1KcdYMI9jfwkw3c.jpg"
+            alt="Auction Banner 1"
+            style={{ height: "400px", objectFit: "cover" }}
+          />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://www.shutterstock.com/image-vector/auction-concept-set-selling-painting-260nw-2014674647.jpg"
+            alt="Auction Banner 2"
+            style={{ height: "400px", objectFit: "cover" }}
+          />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src="https://media.istockphoto.com/id/1391693353/vector/diverse-group-of-bidders-hand-raising-auction-bid-paddles.jpg?s=612x612&w=0&k=20&c=0iyd8fmbB7U3ZTQudrD4qtThHbl6Vl8IRzLN_z_7RGE="
+            alt="Auction Banner 3"
+            style={{ height: "400px", objectFit: "cover" }}
+          />
+        </Carousel.Item>
+
+      </Carousel>
+    </div>
+      {/* <div className="text-white py-5 text-left">
         <Container>
           <h1 className="display-4 fw-bold">Welcome to BidSphere</h1>
           <p className="lead">
@@ -36,9 +68,9 @@ export default function HomePage() {
           </p>
           <Button variant="primary" size="lg">Start Bidding</Button>
         </Container>
-      </div>
+      </div> */}
       <br />
-
+   </div>
       <Container className="my-4">
         <h4 className="mb-3 text-center" style={{ fontWeight: 800, color: "green" }}>Live Auction !!</h4>
         {loading ? (
@@ -68,7 +100,7 @@ export default function HomePage() {
           </Row>
         )}
       </Container>
-      </div>
+   
     </>
     
   );

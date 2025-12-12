@@ -101,6 +101,7 @@ const Leaderboard = () => {
               </ListGroup.Item>
             ))
           ) : (
+            
             <ListGroup.Item>No bids yet</ListGroup.Item>
           )}
         </ListGroup>

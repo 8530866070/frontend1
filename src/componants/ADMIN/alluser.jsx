@@ -44,7 +44,7 @@ const AdminAllProducts = () => {
                 <td>{index + 1}</td>
                 <td>{product.name}</td>
                 <td>{product.email}</td>
-                <td>₹{product.createdAt}</td>
+                <td>{product.createdAt}</td>
                 <td>{product.updatedAt}</td>
                 <td>
                   <Button variant="info" size="sm" className="me-2">Edit</Button>
