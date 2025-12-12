@@ -18,7 +18,7 @@ const RegisterPage = () => {
     try {
       const res = await axios.post('/register', formData);
       alert(res.data.message);
-      navigate('/');
+      navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Registration failed');
     }
@@ -47,7 +47,7 @@ const RegisterPage = () => {
 
           <Button type="submit" className="w-100" variant="primary">Register</Button>
              <p className="text-center mt-3">
-               have an account? <Link to="/"> Login here</Link>
+               have an account? <Link to="/login"> Login here</Link>
             </p>
         </Form>
        

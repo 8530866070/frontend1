@@ -15,6 +15,7 @@ import ProductForm from './componants/product/product';
 import AdminUsers from './componants/ADMIN/alluser';
 import AdminProduct from './componants/ADMIN/allproduct';
 import Leaderboard from './componants/USER/Leaderboard';
+import Landingpage from './componants/landingpage';
 
 
 function LayoutWrapper({ children }) {
@@ -44,8 +45,9 @@ function App() {
       <LayoutWrapper>
         <Routes>
           {/* Public routes */}
+          <Route path='/' element={<Landingpage />} />
           <Route path='/user/home' element={<Home />} />
-          <Route path='/' element={<Login />} />
+          <Route path='/login' element={<Login />} />
           <Route path='/user/auctions' element={<Auction />} />
           <Route path='/register' element={<Register />} />
           <Route path='/user/auctiondetail/:id' element={<AuctionDetailPage />} />

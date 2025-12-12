@@ -21,7 +21,7 @@ const navbar = () => {
         <Navbar.Toggle aria-controls="user-navbar-nav" />
         <Navbar.Collapse id="user-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/">
+            <Nav.Link as={Link} to="/login">
               🏛️ USER
             </Nav.Link>
             <Nav.Link as={Link} to="/admin">
